@@ -3,11 +3,6 @@ import chalk from "chalk";
 import inquirer from "inquirer";
 let answer = await inquirer.prompt([
     {
-        message: "Enter an opertor",
-        name: "operator",
-        type: "list",
-        choices: ["Additon", "Subtraction", "Multiplication", "Division", "Modulus", "Exponent"]
-    }, {
         message: "Enter your first number",
         name: "firstNumber",
         type: "number"
@@ -15,6 +10,11 @@ let answer = await inquirer.prompt([
         message: "Enter your second number",
         name: "secondNumber",
         type: "number"
+    }, {
+        message: "Enter an opertor",
+        name: "operator",
+        type: "list",
+        choices: ["Additon", "Subtraction", "Multiplication", "Division", "Modulus", "Exponent"]
     }
 ]);
 if (answer.operator === "Additon") {
@@ -33,9 +33,7 @@ else if (answer.operator === "Modulus") {
     console.log(chalk.magenta(`Your value is ${answer.firstNumber % answer.secondNumber}`));
 }
 else if (answer.operator === "Exponent") {
-    answer[1].message = "Enter your base number";
-    answer[2].message = "Enter your exponent number";
-    console.log(chalk.magenta(`Your value is ${answer[1].firstNumber ** answer[2].secondNumber}`));
+    console.log(chalk.magenta(`Your value is ${answer.firstNumber ** answer.secondNumber}`));
 }
 else {
     console.log(chalk.red("Please choose a valid operator."));
