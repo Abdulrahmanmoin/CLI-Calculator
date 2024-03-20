@@ -1,6 +1,6 @@
 {
   "name": "666-cli-calculator",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -16,6 +16,7 @@
     "@types/node": "^20.11.28"
   },
   "dependencies": {
+    "chalk": "^4.1.2",
     "inquirer": "^9.2.16"
   }
 }
